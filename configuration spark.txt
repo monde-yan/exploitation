@@ -1,0 +1,21 @@
+Installation de Spark
+
+- install spark 3.3.1
+- install python-2.7.14.msi dans C:\python27 par exemple
+- install hadoop-common-2.2.0-bin-master.zip C:\Hadoop par exemple
+
+- setx /M _JAVA_OPTION "-Djava.net.preferIPv4Stack=true"
+-setx /M HADOOP_HOME C:\Hadoop
+-setx /M path "%path%;C:python27;C\java\bin;C:\Hadoop"
+
+mkdir C:\tmp\tamo
+C:\Hadoop\bin\winutils.exe chmod 777 /tmp/tamo
+
+-C:\spark\bin\pyspark
+-C:\spark\bin\spark-shell
+-C:\spark\bin\spark-class2.cmd org.apache.spark.deploy.master.Master
+-http://DESKTOP-CVUUD9I:8080
+-C:\spark\bin\spark-class2.cmd org.apache.spark.deploy.worker.Worker -c 1 -m 4G spark://192.168.43.158:7077
+
+
+
